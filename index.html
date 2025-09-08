@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro con Confeti</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="fondo-imagen">
+        <div class="container">
+            <h2>Registro</h2>
+            <form id="registroForm">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required
+                       pattern="[A-Za-zÀ-ÿ\s]+"
+                       title="El nombre solo puede contener letras y espacios">
+
+                <label for="correo">Correo:</label>
+                <input type="email" id="correo" name="correo" required
+                       placeholder="ejemplo@correo.com">
+
+                <label for="contrasena">Contraseña:</label>
+                <input type="password" id="contrasena" name="contrasena" required
+                       pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}"
+                       title="Mínimo 8 caracteres, al menos una letra y un número">
+
+                <button type="submit">Registrarse</button>
+            </form>
+        </div>
+    </div>
+    <div id="overlay-exito">
+        <div class="mensaje-exito">🎉 Registro exitoso 🎉</div>
+        <div id="confeti"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

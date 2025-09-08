@@ -1,0 +1,133 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+
+.fondo-imagen {
+    background-image: url('imagen2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 0;
+}
+
+
+.container {
+    background: rgba(255,255,255,0.9);
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+    width: 300px;
+    text-align: center;
+    z-index: 3;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+label {
+    display: block;
+    text-align: left;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: #0077ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #005fcc;
+}
+
+
+#overlay-exito {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(175, 115, 58, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+    z-index: 1000;
+}
+
+#overlay-exito.mostrar {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.mensaje-exito {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    animation: rebotar 1s ease;
+}
+
+@keyframes rebotar {
+    0% { transform: scale(0); }
+    60% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* Confeti */
+.confeti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    opacity: 0.8;
+    top: 0;
+    pointer-events: none;
+    animation: caer 3s linear forwards;
+    border-radius: 50%;
+}
+
+@keyframes caer {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
+.marca-agua {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: rotate(-90deg) translateY(-50%);
+    font-size: 3rem;
+    color: rgba(255,255,255,0.2);
+    font-weight: bold;
+    pointer-events: none;
+    z-index: 2; 
+}
